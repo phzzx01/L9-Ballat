@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L9 Ballat - Servidor Discord</title>
+    <link rel="stylesheet" href="css/main_fixed_v2.css">
+    <link rel="stylesheet" href="css/notification-badge.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <!-- Menu Hambúrguer com contador de notificações -->
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="notification-badge">0</div>
+    </div>
+    
+    <!-- Overlay para quando o menu estiver aberto -->
+    <div class="overlay"></div>
+    
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="sidebar-logo">L9 Ballat</h1>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li class="sidebar-menu-item">
+                <a href="index.html" class="sidebar-menu-link active"> <!-- Link para index.html -->
+                    <i class="fas fa-home"></i> Início
+                </a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#avisos" class="sidebar-menu-link"> <!-- Link para a seção #avisos -->
+                    <i class="fas fa-bell"></i> Novidades
+                    <span class="notification-badge">0</span>
+                </a>
+                <!-- Submenu de notificações removido daqui, será carregado dinamicamente se necessário -->
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#avaliacao" class="sidebar-menu-link">
+                    <i class="fas fa-star"></i> Avaliação
+                </a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#creditos" class="sidebar-menu-link"> <!-- Link para a seção #creditos -->
+                    <i class="fas fa-users"></i> Créditos
+                </a>
+                <!-- Submenu de créditos removido -->
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="login_fixed_v2.html" class="sidebar-menu-link">
+                    <i class="fas fa-user"></i> Login Admin
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <p>L9 Ballat &copy; 2025</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class="logo">L9 Ballat</h1>
+            <p class="tagline">Bem-vindo ao nosso servidor Discord</p>
+        </header>
+        
+        <section class="main-section">
+            <!-- Envelope Literal Aprimorado -->
+            <div class="envelope-container">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body"></div>
+                    <div class="envelope-back"></div>
+                    <div class="envelope-content">
+                        <a href="https://discord.gg/ArAx3YmzAN" target="_blank" class="invite-card-link">
+                            <div class="invite-card">
+                                <div class="invite-content">
+                                    <h2 class="invite-title">L9 Ballat</h2>
+                                    <p class="invite-description">Junte-se à nossa comunidade!</p>
+                                    <div class="join-button">
+                                        <i class="fab fa-discord"></i> Entrar no Servidor
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção de Avisos (inicialmente oculta) -->
+        <section id="avisos" class="notices-section animate-on-scroll">
+            <h2 class="section-title">Avisos & Eventos</h2>
+            <div class="notices-container" id="notices-container">
+                <!-- Avisos serão carregados dinamicamente via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Seção de Avaliação (visível por padrão) -->
+        <section id="avaliacao" class="rating-section">
+            <h2 class="section-title">Avalie Nosso Servidor</h2>
+            <div class="rating-container">
+                <form id="rating-form">
+                    <div class="rating-stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating-value" value="0">
+                    <button type="submit" class="rating-submit">Enviar Avaliação</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Seção de Créditos (inicialmente oculta) -->
+        <section id="creditos" class="credits-section animate-on-scroll">
+            <h2 class="section-title">Créditos</h2>
+            <div class="credits-container">
+                 <div class="credit-item">
+                     <strong>Criador do Site:</strong> @phzzx01
+                 </div>
+                 <div class="credit-item">
+                     <strong>Criador do Servidor Discord:</strong> @matoputas
+                 </div>
+                 <div class="credit-item" style="margin-top: 15px; font-style: italic;">
+                     Agradecemos por escolher a L9 Ballat!
+                 </div>
+             </div>
+         </section>
+
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">L9 Ballat - Servidor Discord</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 L9 Ballat. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="js/main_fixed_v2.js"></script>
+    <!-- Scripts do Manus Space Editor removidos para clareza -->
+</body>
+</html>

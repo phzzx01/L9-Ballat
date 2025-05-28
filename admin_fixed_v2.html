@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - L9 Ballat</title>
+    <link rel="stylesheet" href="css/main_fixed_v2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos específicos para o painel admin */
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .admin-sidebar {
+            width: 250px;
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+            border-right: 1px solid var(--primary-color);
+        }
+        
+        .admin-logo {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+        
+        .admin-logo .logo {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .admin-logo .tagline {
+            font-size: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .admin-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .admin-nav li {
+            margin-bottom: 5px;
+        }
+        
+        .admin-nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .admin-nav-link i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .admin-nav-link:hover, .admin-nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        #logout-link {
+            color: #ff6b6b;
+        }
+        
+        #logout-link:hover {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        
+        .admin-content {
+            flex: 1;
+            padding: 30px;
+            margin-left: 250px;
+        }
+        
+        .admin-section {
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .admin-section h2 {
+            font-family: "Orbitron", sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        
+        .admin-form {
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: white;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .form-actions {
+            text-align: right;
+        }
+        
+        .admin-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-weight: 500;
+        }
+        
+        .admin-button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .admin-button.delete-notice, .admin-button.delete-rating {
+            background-color: #ff6b6b;
+        }
+        
+        .admin-button.delete-notice:hover, .admin-button.delete-rating:hover {
+            background-color: #ff5252;
+        }
+        
+        .admin-table-container {
+            overflow-x: auto;
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .admin-table th, .admin-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        
+        .admin-table th {
+            background-color: #2a2a2a;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .admin-table tr:hover {
+            background-color: rgba(155, 89, 182, 0.1);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .admin-container {
+                flex-direction: column;
+            }
+            
+            .admin-sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--primary-color);
+            }
+            
+            .admin-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles"></div>
+
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h1 class="logo">L9 Ballat</h1>
+                <p class="tagline">Admin</p>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="#" class="admin-nav-link active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#" class="admin-nav-link" data-section="notices"><i class="fas fa-bullhorn"></i> Avisos</a></li>
+                    <li><a href="#" class="admin-nav-link" data-section="ratings"><i class="fas fa-star"></i> Avaliações</a></li>
+                    <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <section id="dashboard-section" class="admin-section">
+                <h2>Dashboard</h2>
+                <p>Bem-vindo ao painel administrativo.</p>
+                <!-- Conteúdo do Dashboard aqui -->
+            </section>
+
+            <section id="notices-section" class="admin-section" style="display: none;">
+                <h2>Gerenciar Avisos</h2>
+                <form id="notice-form" class="admin-form">
+                    <input type="hidden" id="notice-id">
+                    <div class="form-group">
+                        <label for="notice-title">Título do Aviso</label>
+                        <input type="text" id="notice-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notice-content">Conteúdo do Aviso</label>
+                        <textarea id="notice-content" rows="4" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="admin-button">Adicionar Aviso</button>
+                    </div>
+                </form>
+                <h3>Avisos Existentes</h3>
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Conteúdo (início)</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notices-table-body">
+                            <!-- Linhas da tabela serão carregadas via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="ratings-section" class="admin-section" style="display: none;">
+                <h2>Gerenciar Avaliações</h2>
+                 <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Avaliação</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ratings-table-body">
+                            <!-- Linhas da tabela serão carregadas via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Adicionar link para o JS principal -->
+    <script src="js/main_fixed_v2.js"></script>
+</body>
+</html>

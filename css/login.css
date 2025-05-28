@@ -1,0 +1,141 @@
+/* Estilos para o login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-card {
+    background-color: rgba(26, 26, 26, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-logo .logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #9b59b6, #8e44ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px rgba(155, 89, 182, 0.5));
+}
+
+.login-logo .tagline {
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+.login-form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: #9b59b6;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #9b59b6;
+    outline: none;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.login-btn {
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.login-btn:hover {
+    background-color: #8e44ad;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #9b59b6;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+    color: #8e44ad;
+    text-decoration: underline;
+}
+
+.back-link a i {
+    margin-right: 5px;
+}
+
+/* Responsividade para o login */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 20px;
+    }
+    
+    .login-logo .logo {
+        font-size: 2rem;
+    }
+    
+    .login-logo .tagline {
+        font-size: 1rem;
+    }
+    
+    .form-group input {
+        padding: 10px;
+    }
+    
+    .login-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}

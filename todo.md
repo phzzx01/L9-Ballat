@@ -1,0 +1,24 @@
+# Lista de Tarefas - Correção do Site L9 Ballat
+
+- [x] Analisar o código HTML, CSS e JavaScript para entender a estrutura atual.
+- [x] Investigar e corrigir o problema de exibição da seção de créditos/eventos ao usar o menu hambúrguer no `index.html`.
+- [x] Ajustar o estilo do formulário de login e do botão "Entrar" no `login_fixed_v2.html` conforme solicitado.
+- [x] Testar as modificações localmente para garantir que os erros foram corrigidos e o site funciona como esperado. (Primeira rodada)
+- [x] Compactar os arquivos corrigidos em um novo arquivo .zip. (v7)
+- [x] Fazer o deploy temporário do site para revisão do usuário. (v7)
+- [x] Enviar o arquivo .zip e o link de deploy para o usuário. (v7)
+- [x] Implementar toggle dinâmico para Novidades/Créditos no menu.
+- [x] Restaurar sidebar funcional no painel admin.
+- [x] Validar resultado final completo (toggle e sidebar admin).
+- [x] Empacotar arquivos corrigidos (v8) e fazer deploy público.
+- [x] Reportar e enviar arquivo .zip (v8) e link de deploy público ao usuário.
+- [x] Corrigir animação de fechamento do cartão/envelope.
+- [x] Corrigir e atualizar widget Discord (online + limitação membros).
+- [x] Validar resultado final completo (animação e widget).
+- [x] Empacotar arquivos corrigidos (v9) e fazer deploy público.
+- [x] Reportar e enviar arquivo .zip (v9) e link de deploy público ao usuário.
+- [x] Corrigir bug do menu hambúrguer que não abre.
+- [x] Corrigir bug do sistema de avaliação (estrelas não acendem corretamente).
+- [x] Corrigir bug do sistema de avaliação (envio não funciona).
+- [x] Validar resultado final completo (menu, estrelas e envio de avaliação).
+- [x] V15 aplicada com sucesso, o adm pode realizar as tarefas sem erros o CSS geral foi reformulado. (O site não apresenta erros, para novas mudanças deve-se baixar o codigo mais atual e modificalo).
